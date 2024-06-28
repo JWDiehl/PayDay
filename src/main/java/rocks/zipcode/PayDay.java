@@ -49,9 +49,17 @@ public class PayDay {
     * return name, grossPay, deduction, netPay as String
      */
     public String pay(String n, double rate, double worked, double deduct) {
-        return null;
-    }
+        double grossPay = rate * worked;
+        double deduction = grossPay * deduct;
+        double netPay = grossPay - deduction;
 
+       String sf1 = String.format(n, rate, worked, deduct);
+       String formatA = String.format("%.2f", grossPay);
+       String formatB = String.format("%.2f", deduction);
+       String formatC = String.format("%.2f", netPay);
+
+       return (n + " " + formatA + " " + formatB + " " + formatC);
+    }
 
     /**
      * for the example of how the *pay* method might be used to create a text report
